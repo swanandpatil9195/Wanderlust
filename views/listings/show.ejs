@@ -7,7 +7,7 @@
         </div>
 
         <div class="card col-6 offset-3 show-card">
-            <img src=<%=listing.image.url%> class="card-img-top show-img" alt="listing_image">
+            <img src="<%=listing.image.url%>" class="card-img-top show-img" alt="listing_image">
             <div class="card-body">
                 <p class="card-text">
                     <b>
@@ -32,9 +32,10 @@
 
             <form method="POST" action="/listings/<%= listing._id  %>?_method=DELETE">
                 <button class="btn btn-dark offset-5 ">Delete </button>
+             </form>
         </div>
 
-        </form>
+        
 
 
     </div>
