@@ -1,26 +1,20 @@
 (() => {
-  'use strict'
-  const forms = document.querySelectorAll('.needs-validation')
-  for (const form of forms) {
-    form.addEventListener('submit', event => {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
-      }
-      form.classList.add('was-validated')
-      
-      for (const control of form.elements) {
-        if (control.willValidate) {
-          control.setAttribute('aria-invalid', String(!control.validity.valid))
+  "use strict";
+  const forms = document.querySelectorAll(".needs-validation");
+
+  Array.from(forms).forEach((form) => {
+    form.addEventListener(
+      "submit",
+      (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
         }
-      }
-    })
-    // Clear aria-invalid as users correct individual fields
-    form.addEventListener('input', event => {
-      const control = event.target
-      if (control.willValidate && control.hasAttribute('aria-invalid')) {
-        control.setAttribute('aria-invalid', String(!control.validity.valid))
-      }
-    })
-  }
-})()
+        form.classList.add("was-validated");
+
+      },
+      
+    false
+    );
+  });
+})();
